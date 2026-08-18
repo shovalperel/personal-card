@@ -208,68 +208,6 @@ body:has(#theme-toggle:checked) .theme-toggle__icon--moon { display: inline; }
   font-size: 1.05rem;
 }
 
-/* ---------- כישורים ---------- */
-.skills__list {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-}
-
-.skills__item {
-  background-color: var(--accent-soft);
-  color: var(--text);
-  padding: 0.5rem 1rem;
-  border-radius: 999px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  border: 1px solid var(--border);
-}
-
-/* ---------- פרויקטים ---------- */
-.projects__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.2rem;
-}
-
-.project-card {
-  background-color: var(--surface-2);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 1.4rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
-}
-
-.project-card__title {
-  font-size: 1.15rem;
-  font-weight: 700;
-}
-
-.project-card__desc {
-  color: var(--text-muted);
-  font-size: 0.97rem;
-  flex: 1;
-}
-
-.project-card__link {
-  color: var(--accent);
-  font-weight: 700;
-  align-self: flex-start;
-}
-
-.project-card__link:hover {
-  text-decoration: underline;
-}
-
 /* ---------- יצירת קשר ---------- */
 .contact__list {
   font-style: normal;
