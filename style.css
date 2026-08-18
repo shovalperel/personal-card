@@ -226,6 +226,30 @@ body:has(#theme-toggle:checked) .theme-toggle__icon--moon { display: inline; }
   border: 1px solid var(--border);
 }
 
+/* ---------- כלים ומתודולוגיות ---------- */
+.tools__list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.tools__item {
+  background-color: transparent;
+  color: var(--accent);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: 1.5px solid var(--accent);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.tools__item:hover {
+  background-color: var(--accent);
+  color: var(--surface);
+}
+
 /* ---------- יצירת קשר ---------- */
 .contact__list {
   font-style: normal;
