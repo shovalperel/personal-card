@@ -74,7 +74,7 @@ a {
   width: 100%;
   max-width: var(--maxw);
   margin-inline: auto;
-  padding: 0 var(--space);
+  padding: 4rem var(--space) 0;
   flex: 1;
 }
 
@@ -87,37 +87,33 @@ a {
   pointer-events: none;
 }
 
-.site-header {
-  max-width: var(--maxw);
-  margin-inline: auto;
-  padding: var(--space) var(--space) 0;
-  display: flex;
-  justify-content: flex-start;
-}
-
 .theme-toggle {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 50;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.55rem 1rem;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
   background-color: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 999px;
+  border-radius: 50%;
   box-shadow: var(--shadow-sm);
   cursor: pointer;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text-muted);
+  opacity: 0.7;
   user-select: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.35s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.35s ease;
 }
 
 .theme-toggle:hover {
-  transform: translateY(-2px);
+  opacity: 1;
+  transform: scale(1.08);
 }
 
 .theme-toggle__icon {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1;
 }
 
@@ -127,9 +123,10 @@ body:has(#theme-toggle:checked) .theme-toggle__icon--sun { display: none; }
 body:has(#theme-toggle:checked) .theme-toggle__icon--moon { display: inline; }
 
 /* מיקוד נגיש למקלדת */
-.theme-toggle-input:focus-visible + .page .theme-toggle {
+.theme-toggle-input:focus-visible + .theme-toggle {
   outline: 3px solid var(--accent);
   outline-offset: 2px;
+  opacity: 1;
 }
 
 /* ---------- אזור פרופיל ---------- */
@@ -142,7 +139,6 @@ body:has(#theme-toggle:checked) .theme-toggle__icon--moon { display: inline; }
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: clamp(1.5rem, 4vw, 2.5rem);
-  margin-top: var(--space);
 }
 
 .profile__photo {

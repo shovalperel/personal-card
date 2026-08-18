@@ -11,16 +11,12 @@
 <body>
   <!-- מתג מצב כהה/בהיר — CSS בלבד (checkbox hack), ללא JavaScript -->
   <input type="checkbox" id="theme-toggle" class="theme-toggle-input">
+  <label for="theme-toggle" class="theme-toggle" title="החלפת מצב תצוגה" aria-label="החלפה בין מצב כהה למצב בהיר">
+    <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀️</span>
+    <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">🌙</span>
+  </label>
 
   <div class="page">
-    <header class="site-header">
-      <label for="theme-toggle" class="theme-toggle" title="החלפת מצב תצוגה" aria-label="החלפה בין מצב כהה למצב בהיר">
-        <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀️</span>
-        <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">🌙</span>
-        <span class="theme-toggle__text">מצב תצוגה</span>
-      </label>
-    </header>
-
     <main class="container">
       <!-- אזור פרופיל: תמונה, שם ותפקיד -->
       <section class="profile" aria-labelledby="profile-name">
