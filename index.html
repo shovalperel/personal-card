@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="כרטיס הביקור הדיגיטלי של שובל לוגסי — מנהלת מוצר. רקע מקצועי, פרויקטים ופרטי יצירת קשר.">
+  <meta name="author" content="שובל לוגסי">
+  <title>שובל לוגסי | מנהלת מוצר</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- מתג מצב כהה/בהיר — CSS בלבד (checkbox hack), ללא JavaScript -->
+  <input type="checkbox" id="theme-toggle" class="theme-toggle-input">
+
+  <div class="page">
+    <header class="site-header">
+      <label for="theme-toggle" class="theme-toggle" title="החלפת מצב תצוגה" aria-label="החלפה בין מצב כהה למצב בהיר">
+        <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀️</span>
+        <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">🌙</span>
+        <span class="theme-toggle__text">מצב תצוגה</span>
+      </label>
+    </header>
+
+    <main class="container">
+      <!-- אזור פרופיל: תמונה, שם ותפקיד -->
+      <section class="profile" aria-labelledby="profile-name">
+        <img class="profile__photo" src="assets/profile.svg" alt="תמונת הפרופיל של שובל לוגסי" width="180" height="180">
+        <div class="profile__intro">
+          <h1 id="profile-name" class="profile__name">שובל לוגסי</h1>
+          <p class="profile__role">מנהלת מוצר · Product Manager</p>
+          <p class="profile__tagline">בונה מוצרים דיגיטליים ממוקדי-משתמש, מהרעיון ועד ההשקה.</p>
+        </div>
+      </section>
+
+      <!-- אזור "עליי" -->
+      <section class="section about" aria-labelledby="about-title">
+        <h2 id="about-title" class="section__title">עליי</h2>
+        <p class="about__text">
+          <!-- TODO: להחליף בתוכן האמיתי שתשלחי -->
+          שלום, אני שובל — מנהלת מוצר עם תשוקה לחיבור בין צרכי משתמשים, טכנולוגיה ומטרות עסקיות.
+          [כאן ייכנס טקסט על הרקע המקצועי שלך, תחומי העניין, שנות הניסיון וסוגי המוצרים שליווית.]
+          אני נהנית לעבוד בסביבות דינמיות, להוביל תהליכים מקצה לקצה, ולתרגם מחקר משתמשים
+          להחלטות מוצר מבוססות-נתונים.
+        </p>
+      </section>
+
+      <!-- אזור כישורים -->
+      <section class="section skills" aria-labelledby="skills-title">
+        <h2 id="skills-title" class="section__title">כישורים</h2>
+        <ul class="skills__list">
+          <li class="skills__item">ניהול מוצר מקצה לקצה</li>
+          <li class="skills__item">מחקר משתמשים (User Research)</li>
+          <li class="skills__item">כתיבת אפיונים ו-User Stories</li>
+          <li class="skills__item">ניתוח נתונים וקבלת החלטות</li>
+          <li class="skills__item">מתודולוגיות Agile / Scrum</li>
+          <li class="skills__item">עבודה עם צוותי פיתוח ועיצוב</li>
+          <li class="skills__item">Wireframing &amp; Prototyping</li>
+          <li class="skills__item">תעדוף ובניית מפת דרכים (Roadmap)</li>
+        </ul>
+      </section>
+
+      <!-- אזור פרויקטים -->
+      <section class="section projects" aria-labelledby="projects-title">
+        <h2 id="projects-title" class="section__title">פרויקטים</h2>
+        <div class="projects__grid">
+          <!-- TODO: להחליף בפרויקטים האמיתיים -->
+          <article class="project-card">
+            <h3 class="project-card__title">שם הפרויקט הראשון</h3>
+            <p class="project-card__desc">
+              [תיאור קצר של הפרויקט: הבעיה שפתר, התפקיד שלך, והתוצאה/ההשפעה.]
+            </p>
+            <a class="project-card__link" href="#" target="_blank" rel="noopener">לפרויקט ←</a>
+          </article>
+
+          <article class="project-card">
+            <h3 class="project-card__title">שם הפרויקט השני</h3>
+            <p class="project-card__desc">
+              [תיאור קצר של הפרויקט: הבעיה שפתר, התפקיד שלך, והתוצאה/ההשפעה.]
+            </p>
+            <a class="project-card__link" href="#" target="_blank" rel="noopener">לפרויקט ←</a>
+          </article>
+
+          <article class="project-card">
+            <h3 class="project-card__title">שם הפרויקט השלישי</h3>
+            <p class="project-card__desc">
+              [תיאור קצר של הפרויקט: הבעיה שפתר, התפקיד שלך, והתוצאה/ההשפעה.]
+            </p>
+            <a class="project-card__link" href="#" target="_blank" rel="noopener">לפרויקט ←</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- אזור יצירת קשר -->
+      <section class="section contact" aria-labelledby="contact-title">
+        <h2 id="contact-title" class="section__title">יצירת קשר</h2>
+        <address class="contact__list">
+          <a class="contact__item" href="tel:+972524656133">
+            <span class="contact__icon" aria-hidden="true">📞</span>
+            <span class="contact__label">052-465-6133</span>
+          </a>
+          <a class="contact__item" href="mailto:shovalperelshtain@gmail.com">
+            <span class="contact__icon" aria-hidden="true">✉️</span>
+            <span class="contact__label">shovalperelshtain@gmail.com</span>
+          </a>
+          <!-- TODO: הקישור מתעדכן אוטומטית לאחר יצירת הריפו -->
+          <a class="contact__item" href="https://github.com/" target="_blank" rel="noopener">
+            <span class="contact__icon" aria-hidden="true">💻</span>
+            <span class="contact__label">GitHub</span>
+          </a>
+          <!-- TODO: להחליף בכתובת הפרופיל האמיתית שלך -->
+          <a class="contact__item" href="https://www.linkedin.com/" target="_blank" rel="noopener">
+            <span class="contact__icon" aria-hidden="true">🔗</span>
+            <span class="contact__label">LinkedIn</span>
+          </a>
+        </address>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 שובל לוגסי · נבנה עם HTML &amp; CSS</p>
+    </footer>
+  </div>
+</body>
+</html>

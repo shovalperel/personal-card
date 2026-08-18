@@ -1,0 +1,348 @@
+/* ============================================================
+   כרטיס ביקור דיגיטלי — שובל לוגסי
+   קובץ עיצוב חיצוני יחיד. ללא JavaScript.
+   ============================================================ */
+
+/* ---------- ערכת צבעים בהירה (ברירת מחדל) ---------- */
+:root {
+  --bg: #f4f6fb;
+  --surface: #ffffff;
+  --surface-2: #eef1f8;
+  --text: #1c2331;
+  --text-muted: #566074;
+  --accent: #4f46e5;
+  --accent-soft: #e0e7ff;
+  --border: #dfe3ee;
+  --shadow: 0 10px 30px rgba(28, 35, 49, 0.08);
+  --shadow-sm: 0 4px 14px rgba(28, 35, 49, 0.06);
+
+  --radius: 18px;
+  --radius-sm: 12px;
+  --maxw: 960px;
+  --space: clamp(1rem, 3vw, 2rem);
+
+  --font: "Segoe UI", "Helvetica Neue", Arial, "Assistant", "Rubik", system-ui, sans-serif;
+}
+
+/* ---------- ערכת צבעים כהה — נדרסת כשה-checkbox מסומן ---------- */
+body:has(#theme-toggle:checked) {
+  --bg: #0f1420;
+  --surface: #182031;
+  --surface-2: #1f293c;
+  --text: #eaf0fb;
+  --text-muted: #a3aec4;
+  --accent: #8b9bff;
+  --accent-soft: #26304a;
+  --border: #2a3549;
+  --shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
+  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- איפוס בסיסי ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  min-height: 100vh;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---------- מבנה עמוד ---------- */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding: 0 var(--space);
+  flex: 1;
+}
+
+/* ---------- מתג מצב תצוגה (checkbox hack) ---------- */
+.theme-toggle-input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.site-header {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding: var(--space) var(--space) 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  user-select: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.35s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+}
+
+.theme-toggle__icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* מצב בהיר → מציג שמש; מצב כהה → מציג ירח */
+.theme-toggle__icon--moon { display: none; }
+body:has(#theme-toggle:checked) .theme-toggle__icon--sun { display: none; }
+body:has(#theme-toggle:checked) .theme-toggle__icon--moon { display: inline; }
+
+/* מיקוד נגיש למקלדת */
+.theme-toggle-input:focus-visible + .page .theme-toggle {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---------- אזור פרופיל ---------- */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.2rem, 4vw, 2.5rem);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  margin-top: var(--space);
+}
+
+.profile__photo {
+  width: clamp(120px, 22vw, 180px);
+  height: clamp(120px, 22vw, 180px);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent-soft);
+  background-color: var(--surface-2);
+  flex-shrink: 0;
+}
+
+.profile__name {
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.profile__role {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  margin-top: 0.25rem;
+}
+
+.profile__tagline {
+  color: var(--text-muted);
+  margin-top: 0.6rem;
+  font-size: 1rem;
+}
+
+/* ---------- סקשנים כלליים ---------- */
+.section {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: clamp(1.3rem, 3.5vw, 2rem);
+  margin-top: var(--space);
+}
+
+.section__title {
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  position: relative;
+}
+
+.section__title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  inset-inline-start: 0;
+  width: 56px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: var(--accent);
+}
+
+.about__text {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* ---------- כישורים ---------- */
+.skills__list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.skills__item {
+  background-color: var(--accent-soft);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+}
+
+/* ---------- פרויקטים ---------- */
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+}
+
+.project-card {
+  background-color: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.project-card__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.project-card__desc {
+  color: var(--text-muted);
+  font-size: 0.97rem;
+  flex: 1;
+}
+
+.project-card__link {
+  color: var(--accent);
+  font-weight: 700;
+  align-self: flex-start;
+}
+
+.project-card__link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- יצירת קשר ---------- */
+.contact__list {
+  font-style: normal;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+}
+
+.contact__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1.1rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  word-break: break-word;
+}
+
+.contact__item:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+
+.contact__icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+/* ---------- פוטר ---------- */
+.site-footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding: var(--space);
+  margin-top: var(--space);
+}
+
+/* ============================================================
+   רספונסיביות
+   ============================================================ */
+
+/* מובייל — פרופיל בטור אנכי וממורכז */
+@media (max-width: 600px) {
+  .profile {
+    flex-direction: column;
+    text-align: center;
+  }
+  .section__title::after {
+    inset-inline-start: 50%;
+    transform: translateX(50%);
+  }
+  .section__title {
+    text-align: center;
+  }
+}
+
+/* מסכים גדולים מאוד — טלוויזיות ומסכי 4K */
+@media (min-width: 1600px) {
+  :root {
+    --maxw: 1200px;
+  }
+  body {
+    font-size: 1.15rem;
+  }
+}
+
+/* כיבוד העדפת משתמש להפחתת אנימציות */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
