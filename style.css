@@ -102,9 +102,10 @@ a {
   border-radius: 50%;
   box-shadow: var(--shadow-sm);
   cursor: pointer;
-  opacity: 0.7;
+  color: var(--text-muted);
+  opacity: 0.75;
   user-select: none;
-  transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.35s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.35s ease, color 0.35s ease;
 }
 
 .theme-toggle:hover {
@@ -113,8 +114,9 @@ a {
 }
 
 .theme-toggle__icon {
-  font-size: 1.2rem;
-  line-height: 1;
+  width: 20px;
+  height: 20px;
+  display: block;
 }
 
 /* מצב בהיר → מציג שמש; מצב כהה → מציג ירח */
