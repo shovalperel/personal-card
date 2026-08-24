@@ -452,28 +452,27 @@ body:has(#theme-toggle:checked) .theme-toggle__icon--moon { display: inline; }
   line-height: 1;
 }
 
-.contact__qr {
+.profile__qr {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
-  margin-top: 1.4rem;
-  padding-top: 1.4rem;
-  border-top: 1px solid var(--border);
+  gap: 0.4rem;
+  margin-inline-start: auto;
+  flex-shrink: 0;
 }
 
-.contact__qr-img {
-  width: 128px;
-  height: 128px;
+.profile__qr-img {
+  width: 104px;
+  height: 104px;
   border-radius: 12px;
   background-color: #fff;
-  padding: 8px;
+  padding: 6px;
   border: 1px solid var(--border);
 }
 
-.contact__qr-label {
+.profile__qr-label {
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
 }
 
@@ -498,6 +497,9 @@ body:has(#theme-toggle:checked) .theme-toggle__icon--moon { display: inline; }
   }
   .profile__cta {
     justify-content: center;
+  }
+  .profile__qr {
+    margin-inline-start: 0;
   }
   .section__title::after {
     inset-inline-start: 50%;
