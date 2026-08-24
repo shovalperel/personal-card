@@ -206,6 +206,179 @@ body:has(#theme-toggle:checked) .theme-toggle__icon--moon { display: inline; }
   font-size: 1.05rem;
 }
 
+/* ---------- כפתורי פעולה (CTA) ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.98rem;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn--primary {
+  background-color: var(--accent);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btn--ghost {
+  background-color: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn--ghost:hover {
+  background-color: var(--accent);
+  color: var(--surface);
+}
+
+.profile__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.1rem;
+}
+
+/* ---------- הישגים במספרים ---------- */
+.stats__grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.stat {
+  text-align: center;
+  padding: 0.4rem;
+}
+
+.stat__num {
+  display: block;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1.1;
+}
+
+.stat__label {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 0.35rem;
+}
+
+/* ---------- ציר זמן (ניסיון) ---------- */
+.timeline {
+  list-style: none;
+}
+
+.timeline__item {
+  position: relative;
+  padding-inline-start: 1.4rem;
+  padding-bottom: 1.3rem;
+  margin-inline-start: 5px;
+  border-inline-start: 2px solid var(--border);
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+  border-inline-start-color: transparent;
+}
+
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: -7px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  border: 3px solid var(--surface);
+}
+
+.timeline__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.timeline__role {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.timeline__date {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.timeline__desc {
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+  font-size: 0.98rem;
+}
+
+/* ---------- פרויקטים / Case Studies ---------- */
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+
+.case-card {
+  background-color: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.case-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.case-card__title {
+  font-size: 1.12rem;
+  font-weight: 800;
+  margin-bottom: 0.2rem;
+}
+
+.case-card__row {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.case-card__tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.12rem 0.5rem;
+  border-radius: 6px;
+  margin-inline-end: 0.35rem;
+  vertical-align: middle;
+}
+
+.case-card__tag--problem { background-color: #fee2e2; color: #b91c1c; }
+.case-card__tag--action  { background-color: #e0e7ff; color: #4338ca; }
+.case-card__tag--result  { background-color: #dcfce7; color: #15803d; }
+
 /* ---------- כישורים ---------- */
 .skills__list {
   list-style: none;
@@ -279,6 +452,31 @@ body:has(#theme-toggle:checked) .theme-toggle__icon--moon { display: inline; }
   line-height: 1;
 }
 
+.contact__qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.4rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--border);
+}
+
+.contact__qr-img {
+  width: 128px;
+  height: 128px;
+  border-radius: 12px;
+  background-color: #fff;
+  padding: 8px;
+  border: 1px solid var(--border);
+}
+
+.contact__qr-label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
 /* ---------- פוטר ---------- */
 .site-footer {
   text-align: center;
@@ -297,6 +495,9 @@ body:has(#theme-toggle:checked) .theme-toggle__icon--moon { display: inline; }
   .profile {
     flex-direction: column;
     text-align: center;
+  }
+  .profile__cta {
+    justify-content: center;
   }
   .section__title::after {
     inset-inline-start: 50%;
