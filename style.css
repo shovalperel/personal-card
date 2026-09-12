@@ -5,35 +5,37 @@
 
 /* ---------- ערכת צבעים בהירה (ברירת מחדל) ---------- */
 :root {
-  --bg: #f4f6fb;
+  --bg: #f3f4ec;
   --surface: #ffffff;
-  --surface-2: #eef1f8;
-  --text: #1c2331;
-  --text-muted: #566074;
-  --accent: #4f46e5;
-  --accent-soft: #e0e7ff;
-  --border: #dfe3ee;
-  --shadow: 0 10px 30px rgba(28, 35, 49, 0.08);
-  --shadow-sm: 0 4px 14px rgba(28, 35, 49, 0.06);
+  --surface-2: #edf0e3;
+  --text: #1b2416;
+  --text-muted: #5c6552;
+  --accent: #4f7d2b;
+  --accent-soft: #d8ecb2;
+  --lime: #c3e98a;
+  --border: #e3e6d8;
+  --shadow: 0 10px 30px rgba(27, 36, 22, 0.08);
+  --shadow-sm: 0 4px 14px rgba(27, 36, 22, 0.06);
 
-  --radius: 18px;
-  --radius-sm: 12px;
+  --radius: 22px;
+  --radius-sm: 14px;
   --maxw: 960px;
   --space: clamp(1rem, 3vw, 2rem);
 
-  --font: "Segoe UI", "Helvetica Neue", Arial, "Assistant", "Rubik", system-ui, sans-serif;
+  --font: "Assistant", "Segoe UI", "Helvetica Neue", Arial, system-ui, sans-serif;
 }
 
 /* ---------- ערכת צבעים כהה — נדרסת כשה-checkbox מסומן ---------- */
 body:has(#theme-toggle:checked) {
-  --bg: #0f1420;
-  --surface: #182031;
-  --surface-2: #1f293c;
-  --text: #eaf0fb;
-  --text-muted: #a3aec4;
-  --accent: #8b9bff;
-  --accent-soft: #26304a;
-  --border: #2a3549;
+  --bg: #14180f;
+  --surface: #1d2416;
+  --surface-2: #26301b;
+  --text: #eef2e6;
+  --text-muted: #a7b19a;
+  --accent: #a9db54;
+  --accent-soft: #2d3b1d;
+  --lime: #3a4a24;
+  --border: #303b23;
   --shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
   --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.35);
 }
@@ -166,6 +168,8 @@ body:has(#theme-toggle:checked) .theme-toggle__icon--moon { display: inline; }
 
 /* ---------- אזור פרופיל ---------- */
 .profile {
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   gap: clamp(1.2rem, 4vw, 2.5rem);
@@ -174,6 +178,25 @@ body:has(#theme-toggle:checked) .theme-toggle__icon--moon { display: inline; }
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+/* עיגול ליים דקורטיבי בסגנון האתר המקורי */
+.profile::before {
+  content: "";
+  position: absolute;
+  inset-block-end: -90px;
+  inset-inline-start: -70px;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  background-color: var(--lime);
+  opacity: 0.55;
+  z-index: 0;
+}
+
+.profile > * {
+  position: relative;
+  z-index: 1;
 }
 
 .profile__photo {
@@ -187,9 +210,10 @@ body:has(#theme-toggle:checked) .theme-toggle__icon--moon { display: inline; }
 }
 
 .profile__name {
-  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
   font-weight: 800;
-  letter-spacing: -0.5px;
+  letter-spacing: -1px;
+  line-height: 1.05;
 }
 
 .profile__role {
@@ -367,9 +391,9 @@ body:has(#theme-toggle:checked) .theme-toggle__icon--moon { display: inline; }
   vertical-align: middle;
 }
 
-.case-card__tag--problem { background-color: #fee2e2; color: #b91c1c; }
-.case-card__tag--action  { background-color: #e0e7ff; color: #4338ca; }
-.case-card__tag--result  { background-color: #dcfce7; color: #15803d; }
+.case-card__tag--problem { background-color: var(--surface); color: var(--text-muted); border: 1px solid var(--border); }
+.case-card__tag--action  { background-color: var(--accent-soft); color: var(--accent); }
+.case-card__tag--result  { background-color: var(--accent); color: var(--surface); }
 
 /* ---------- כישורים ---------- */
 .skills__list {
