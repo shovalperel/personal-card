@@ -131,6 +131,39 @@ body:has(#theme-toggle:checked) .theme-toggle__icon--moon { display: inline; }
   opacity: 1;
 }
 
+/* ---------- כפתור "ליצירת קשר" (עוגן) ---------- */
+.contact-jump {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 1.15rem;
+  background-color: var(--accent);
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-jump:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.contact-jump:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* כדי שהכותרת לא תוסתר ע"י הכפתור הקבוע בעת הקפיצה */
+#contact {
+  scroll-margin-top: 1.5rem;
+}
+
 /* ---------- אזור פרופיל ---------- */
 .profile {
   display: flex;
