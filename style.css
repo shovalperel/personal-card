@@ -22,7 +22,7 @@
   --maxw: 960px;
   --space: clamp(1rem, 3vw, 2rem);
 
-  --font: "Assistant", "Segoe UI", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --font: "Rubik", "Segoe UI", "Helvetica Neue", Arial, system-ui, sans-serif;
 }
 
 /* ---------- ערכת צבעים כהה — נדרסת כשה-checkbox מסומן ---------- */
@@ -350,7 +350,12 @@ body:has(#theme-toggle:checked) .theme-toggle__icon--moon { display: inline; }
   margin-bottom: 0.2rem;
 }
 
+/* כל שורה = עמודת תווית ברוחב קבוע + עמודת טקסט, כדי שהתוויות יתיישרו */
 .case-card__row {
+  display: grid;
+  grid-template-columns: 4.3rem 1fr;
+  gap: 0.5rem;
+  align-items: start;
   color: var(--text-muted);
   font-size: 0.95rem;
   line-height: 1.6;
@@ -362,8 +367,8 @@ body:has(#theme-toggle:checked) .theme-toggle__icon--moon { display: inline; }
   font-weight: 800;
   padding: 0.12rem 0.5rem;
   border-radius: 6px;
-  margin-inline-end: 0.35rem;
-  vertical-align: middle;
+  text-align: center;
+  line-height: 1.6;
 }
 
 .case-card__tag--problem { background-color: var(--surface); color: var(--text-muted); border: 1px solid var(--border); }
@@ -495,6 +500,21 @@ body:has(#theme-toggle:checked) .theme-toggle__icon--moon { display: inline; }
   }
   .section__title {
     text-align: center;
+  }
+}
+
+/* שלוש קוביות בשורה — יישור השורות בין הקוביות באמצעות subgrid,
+   כך שהתוויות "בעיה" / "פעולה" / "תוצאה" נמצאות באותו גובה בשלושתן */
+@media (min-width: 820px) {
+  .projects__grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    row-gap: 0.6rem;
+  }
+  .case-card {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
   }
 }
 
