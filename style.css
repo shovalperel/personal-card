@@ -263,34 +263,6 @@ body:has(#theme-toggle:checked) .theme-toggle__icon--moon { display: inline; }
   font-size: 1.05rem;
 }
 
-/* ---------- הישגים במספרים ---------- */
-.stats__grid {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1rem;
-}
-
-.stat {
-  text-align: center;
-  padding: 0.4rem;
-}
-
-.stat__num {
-  display: block;
-  font-size: clamp(1.6rem, 4vw, 2.2rem);
-  font-weight: 800;
-  color: var(--accent);
-  line-height: 1.1;
-}
-
-.stat__label {
-  display: block;
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  margin-top: 0.35rem;
-}
-
 /* ---------- ציר זמן (ניסיון) ---------- */
 .timeline {
   list-style: none;
